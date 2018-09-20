@@ -1,1 +1,0 @@
-// Segmentierung, maßgeschneiderter Customer Journeys, nosto : 3000€/Monat Content-Personalisierung
