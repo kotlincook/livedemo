@@ -1,8 +1,5 @@
 package de.kotlincook.extfuns
 
-import de.kotlincook.MathExt
-import de.kotlincook.divides
-import de.kotlincook.isEven
 import java.math.BigDecimal
 import java.text.SimpleDateFormat
 
@@ -25,7 +22,9 @@ fun String.toDate(pattern: String = "yyyy-MM-dd") =
 
 fun Int.isEven() = this % 2 == 0
 
-object Maths {
+infix fun Int.divides(n: Int) = this % n == 0
+
+object MoreMath {
     fun sqrt(n : Int) = Math.ceil(Math.sqrt(n.toDouble())).toInt()
 }
 
@@ -33,7 +32,7 @@ fun Int.isPrime() = when {
     this in (0..1) -> false
     this == 2 -> true
     this.isEven() -> false
-    else -> (3..MathExt.sqrt(this)).any { this divides it }.not()
+    else -> (3..MoreMath.sqrt(this)).any { this divides it }.not()
 }
 
 fun main(args: Array<String>) {
@@ -41,7 +40,7 @@ fun main(args: Array<String>) {
 
     val zahl = 123
     println(zahl.isEven())
-    println(Maths.sqrt(121))
+    println(MoreMath.sqrt(121))
     println(100.00.bd.euro)
 }
 

@@ -23,14 +23,10 @@ fun counterActor() = actor<CounterMessage> {
 }
 
 
-
 fun main(args: Array<String>) = runBlocking {
     val counter = counterActor()
-    repeat(1000) {
-        counter.send(IncCounter)
-    }
+    repeat(1000) { counter.send(IncCounter) }
     val response = CompletableDeferred<Int>()
     counter.send(GetCounter(response))
     println(response.await())
-    // counter.close()
 }

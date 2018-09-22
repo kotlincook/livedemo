@@ -21,5 +21,4 @@ fun main(args: Array<String>) = runBlocking {
         println(squares.receive())
         delay(100)
     }
-
 }
