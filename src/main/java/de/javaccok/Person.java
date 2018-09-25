@@ -21,4 +21,5 @@ public class Person {
     public boolean isMarried() {
         return isMarried;
     }
+
 }

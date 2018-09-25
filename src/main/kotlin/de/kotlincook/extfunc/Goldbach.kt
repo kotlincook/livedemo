@@ -1,4 +1,4 @@
-package de.kotlincook.coroutines
+package de.kotlincook.extfunc
 
 import de.kotlincook.extfuns.isPrime
 import kotlin.coroutines.experimental.buildSequence
@@ -16,5 +16,5 @@ fun goldbach(n: Int) = primes.take(n/2)
         .toList()
 
 fun main(args: Array<String>) {
-    println(goldbach(20))
+    println(goldbach(30 ))
 }
