@@ -1,12 +1,19 @@
 package de.kotlincook.dsl
 
+@DslMarker
+annotation class BDDMarker
+
+@BDDMarker
 class Scenario(val descr: String,
                val context: MutableMap<String, Any> = HashMap(),
                block: Scenario.() -> Unit) {
     init {
         block()
     }
+    @BDDMarker
     inner class Given(val context: MutableMap<String, Any> = this@Scenario.context)
+
+
     fun given(block: Given.() -> Unit) {
         Given().block()
     }
