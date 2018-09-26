@@ -10,12 +10,17 @@ class Scenario(val descr: String,
     init {
         block()
     }
+
     @BDDMarker
     inner class Given(val context: MutableMap<String, Any> = this@Scenario.context)
-
-
     fun given(block: Given.() -> Unit) {
         Given().block()
+    }
+
+    @BDDMarker
+    inner class Then(val context: MutableMap<String, Any> = this@Scenario.context)
+    fun then(block: Then.() -> Unit) {
+        Then().block()
     }
 }
 
@@ -23,17 +28,18 @@ fun Scenario.Given.`Nutzer meldet sich an`(user: String) {
     context["User"] = user
 }
 
-val Scenario.Given.`Nutzer reget sich auf`: Unit
+val Scenario.Then.`Nutzer reget sich auf`: Unit
     get() {
-        println("Der Nutzer ist ${context["User"]}")
+        println("Der verärgerte Nutzer ist ${context["User"]}")
     }
 
 fun main(args: Array<String>) {
     Scenario("Dies wird ein toller Test") {
         given {
             `Nutzer meldet sich an`("Vollmer")
+        }
+        then {
             `Nutzer reget sich auf`
         }
     }
 }
-
