@@ -1,7 +1,5 @@
 package de.javaccok;
-
 import java.util.*;
-
 
 public class DoSomething {
 
@@ -20,11 +18,16 @@ public class DoSomething {
     }
 
 
+
+
+
     public static void main(String[] args) {
         Enumeration numbers = Collections.enumeration(
                 Arrays.asList(1,5,3,5,7,8,7,5,3,24,5,6,3,2,5,6));
         final Map map = new DoSomething().itDoesSomething(numbers);
         System.out.println(map);
+
+
     }
 
 }
