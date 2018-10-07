@@ -3,6 +3,9 @@ package de.kotlincook.extfunc
 import de.kotlincook.extfuns.isPrime
 import kotlin.coroutines.experimental.buildSequence
 
+val primes2 = generateSequence(2, {it + 1}).filter { it.isPrime() }
+
+
 val primes = buildSequence {
     for (counter in 0..Int.MAX_VALUE) {
         if (counter.isPrime()) yield(counter)
