@@ -1,9 +1,11 @@
 package de.kotlincook.quiz
 
-fun String.saySomething() = {
-    println(this + "Softwerkskammer")
-}
+import java.util.*
 
-fun main(args: Array<String>) {
-    "I enjoy ".saySomething()
-}
+val name1: String
+    get() = Date().toString()
+
+//const val name2: String
+//    get() = Date().toString()
+
+const val name3 = "Svetlana Isakova"
