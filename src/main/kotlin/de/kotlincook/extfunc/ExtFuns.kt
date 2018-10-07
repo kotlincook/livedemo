@@ -29,7 +29,7 @@ object MoreMath {
 }
 
 fun Int.isPrime() = when {
-    this in (0..1) -> false
+    this in 0..1 -> false
     this == 2 -> true
     this.isEven() -> false
     else -> (3..MoreMath.sqrt(this)).any { it divides this }.not()
