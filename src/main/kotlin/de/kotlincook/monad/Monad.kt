@@ -27,7 +27,9 @@ val squareRoot = fun(x: Double) = if (x < 0.0) Option.None else Some(Math.sqrt(x
 
 fun main(args: Array<String>) {
     val some = Some(-4.0)
-    val result = some flatMap reciprocal flatMap squareRoot
+    val result1 = some flatMap reciprocal flatMap squareRoot
     val together = reciprocal kleisli squareRoot
-    println(result)
+    val result2 = some flatMap together
+    println(result1)
+    println(result2)
 }
