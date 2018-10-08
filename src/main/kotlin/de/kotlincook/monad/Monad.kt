@@ -18,11 +18,16 @@ sealed class Option<T> : Monad<T> {
     }
 }
 
-val reciprocal = {x:Double -> if (x == 0.0) Option.None else Option.Some(1.0/x) }
-val squareRoot = fun(x: Double) = if (x < 0.0) Option.None else Option.Some(Math.sqrt(x))
+infix fun <S, T, U> ((T) -> Monad<U>).kleisli(f: (S) -> Monad<T>): (S) -> Monad<U> {
+    return {s: S -> Some(s).flatMap(f).flatMap(this)}
+}
+
+val reciprocal = {x:Double -> if (x == 0.0) Option.None else Some(1.0/x) }
+val squareRoot = fun(x: Double) = if (x < 0.0) Option.None else Some(Math.sqrt(x))
 
 fun main(args: Array<String>) {
     val some = Some(-4.0)
     val result = some flatMap reciprocal flatMap squareRoot
+    val together = reciprocal kleisli squareRoot
     println(result)
 }
