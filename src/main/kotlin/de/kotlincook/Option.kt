@@ -1,5 +1,5 @@
 package de.kotlincook
 
-interface Monad<out T> {
-    fun <S> flatMap(f: (T) -> Monad<S>): Monad<S>
+interface Monad<out A> {
+    fun <B> flatMap(f: (A) -> Monad<B>): Monad<B>
 }
