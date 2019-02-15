@@ -1,10 +1,4 @@
 package de.kotlincook.coroutines1
-
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.runBlocking
-import kotlin.coroutines.experimental.coroutineContext
-
 fun timeConsuming1(): String {
     println("Start1")
     Thread.sleep(1000)

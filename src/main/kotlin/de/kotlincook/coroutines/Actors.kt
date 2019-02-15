@@ -2,9 +2,9 @@ package de.kotlincook.coroutines.acotors
 
 import de.kotlincook.coroutines.acotors.CounterMessage.GetCounter
 import de.kotlincook.coroutines.acotors.CounterMessage.IncCounter
-import kotlinx.coroutines.experimental.CompletableDeferred
-import kotlinx.coroutines.experimental.channels.actor
-import kotlinx.coroutines.experimental.runBlocking
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.channels.actor
+import kotlinx.coroutines.runBlocking
 
 sealed class CounterMessage {
     object IncCounter: CounterMessage()

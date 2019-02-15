@@ -1,9 +1,8 @@
 package de.kotlincook.coroutines2
 
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.runBlocking
-import kotlin.coroutines.experimental.coroutineContext
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
+
 
 fun timeConsuming1(): String {
     println("Start1")
